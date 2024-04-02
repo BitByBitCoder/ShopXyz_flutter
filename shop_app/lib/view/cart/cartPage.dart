@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_app/controller/cartControler.dart';
+import 'package:shop_app/core/errorScreen.dart';
 
 class CartScreen extends ConsumerWidget {
   const CartScreen({super.key});
@@ -57,8 +58,8 @@ class CartScreen extends ConsumerWidget {
                   ),
                 );
               }),
-          error: (error, StackTrace) => Text('dddd'),
-          loading: () => Text('loading')),
+          error: (error, StackTrace) => ErrorScreen(),
+          loading: () => ErrorScreen()),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_app/Model/shopModel.dart';
 import 'package:shop_app/controller/shopController.dart';
 import 'package:shop_app/core/drower.dart';
+import 'package:shop_app/core/errorScreen.dart';
 import 'package:shop_app/view/Home/categoriesWigits.dart';
 import 'package:shop_app/view/productPage/productPage.dart';
 
@@ -158,17 +159,20 @@ class _ErrorView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(errorMessage),
-          ElevatedButton(
-            onPressed: () {
-              onRetry();
-            },
-            child: const Text('Retry'),
-          ),
-        ],
+      child: Container(
+        color: Color.fromARGB(255, 247, 246, 247),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/err.jpg'),
+            ElevatedButton(
+              onPressed: () {
+                onRetry();
+              },
+              child: const Text('Retry'),
+            ),
+          ],
+        ),
       ),
     );
   }

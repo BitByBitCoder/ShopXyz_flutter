@@ -23,7 +23,8 @@ class CartRepository {
         throw Exception('Error occurred: ');
       }
     } catch (e) {
-      throw Exception('Error occurred: $e');
+      print('Error occurred: $e');
+      rethrow;
     }
   }
 }

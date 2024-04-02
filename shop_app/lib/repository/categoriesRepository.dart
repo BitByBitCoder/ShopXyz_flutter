@@ -25,7 +25,8 @@ class jewelery {
         throw Exception('faild to fetch');
       }
     } catch (e) {
-      throw Exception(e);
+      print(e);
+      rethrow;
     }
   }
 

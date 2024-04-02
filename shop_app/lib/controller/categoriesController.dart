@@ -17,8 +17,12 @@ class CategoriesController extends StateNotifier<AsyncValue<List<Categories>>> {
     fetch();
   }
 
-  void fetch() async {
-    List<Categories> result = await a.fetch();
-    state = AsyncData(result);
+  Future<void> fetch() async {
+    try {
+      List<Categories> result = await a.fetch();
+      state = AsyncData(result);
+    } catch (e) {
+      state = AsyncValue.error(e, StackTrace.current);
+    }
   }
 }

@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:shop_app/view/administrator/addProductPage.dart';
-import 'package:shop_app/view/administrator/deleteProductPage.dart';
-import 'package:shop_app/view/administrator/updateProductPage.dart';
+import 'package:shop_app/view/administrator/deleteProductScreen/deleteProductPage.dart';
+import 'package:shop_app/view/administrator/updateProcuctScreen/updateProductScreen.dart';
 
 class AdministratorScreen extends ConsumerStatefulWidget {
   const AdministratorScreen({super.key});
@@ -62,7 +62,7 @@ class _AdministratorScreenState extends ConsumerState<AdministratorScreen> {
                 ),
                 action('Add Product', AddProductPage()),
                 action('Delete Product', DeleteProductPage()),
-                action('Update Product', UpadteProductPage()),
+                action('Update Product', UpdateProductScreen()),
                 SizedBox(
                   height: 10,
                 ),
